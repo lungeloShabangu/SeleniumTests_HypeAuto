@@ -4,12 +4,15 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import pageObjects.Base_PO;
 import pageObjects.Contact_Us_PO;
 
 public class Contact_Us_Steps extends Base_PO {
 
     private Contact_Us_PO contact_us_po;
+    WebDriver driver;
 
     public Contact_Us_Steps(Contact_Us_PO contact_us_po) {
         this.contact_us_po = contact_us_po;
@@ -65,11 +68,13 @@ public class Contact_Us_Steps extends Base_PO {
         contact_us_po.setComment(comment);
     }
 
-
-
-    @Then("I should be presented with a successful contact us submission message")
+    @And("I should be presented with a successful contact us submission message")
     public void i_should_be_presented_with_a_successful_contact_us_submission_message() {
         contact_us_po.validate_Success_Submission_Text();
          }
-
+    @Then("Close Browser")
+    public void close_browser(){
+//        driver.close();
+//        driver.quit();
+    }
 }

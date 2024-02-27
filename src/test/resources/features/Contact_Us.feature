@@ -8,7 +8,8 @@ Feature: Webdriver University - Contact Us Page
     And I enter a unique email address
     And I enter a unique comment
     And I click on the submit button
-    Then I should be presented with a successful contact us submission message
+    And I should be presented with a successful contact us submission message
+    Then Close Browser
 
   Scenario: Validate Successful Submission - Specific Data
     Given I access the webdriver university contact us page
@@ -17,4 +18,5 @@ Feature: Webdriver University - Contact Us Page
     And I enter a specific email address treb@mmail.com
     And I enter a specific comment "How are you?"
     And I click on the submit button
-    Then I should be presented with a successful contact us submission message
+    And I should be presented with a successful contact us submission message
+    Then Close Browser
