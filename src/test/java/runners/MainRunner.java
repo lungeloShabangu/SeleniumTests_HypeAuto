@@ -8,7 +8,7 @@ import org.testng.annotations.DataProvider;
 
 @CucumberOptions(features = {"classpath:features"}, glue = {"stepDefinations"},
         tags = "@contact-us", monochrome = true, dryRun = false,
-        plugin = {"pretty", "html:target/cucumber", "json:target/cucumber.json"})
+        plugin = {"pretty", "html:target/cucumber", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"})
 public class MainRunner extends AbstractTestNGCucumberTests {
     WebDriver driver;
 
@@ -17,6 +17,5 @@ public class MainRunner extends AbstractTestNGCucumberTests {
     public Object[][] scenarios() {
         return super.scenarios();
     }
-
 }
 
